@@ -1,0 +1,26 @@
+{
+  "version": "2.4.1",
+  "summary": {
+    "title": "New Threat Model",
+    "owner": "Lex",
+    "description": "Prueba de Threat Modelling",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "STRIDE 1",
+        "diagramType": "STRIDE",
+        "placeholder": "Descripción de nuevo diagrama STRIDE",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.4.1",
+        "cells": []
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "Lex",
+    "threatTop": 0
+  }
+}
